@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://73uy6s3gtrns"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 215.0
+offset_bottom = 40.0

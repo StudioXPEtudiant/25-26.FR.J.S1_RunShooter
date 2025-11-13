@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://46rspyg1ivbb"]
+
+[ext_resource type="Script" uid="uid://bfssiif6qeu85" path="res://zone_d'interaction.gd" id="1_3x42c"]
+[ext_resource type="Script" uid="uid://scheshpegys3" path="res://label_3d.gd" id="2_y2vno"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eagls"]
+radius = 0.8717456
+
+[node name="zone d\'interaction" type="Area3D"]
+script = ExtResource("1_3x42c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_eagls")
+
+[node name="Label3D" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1.138559, 9.953599e-08, 1.6442881, -1.7484555e-07, -2, 0, 1.6442881, -1.4374822e-07, 1.138559, 0, 0.7882497, 0)
+script = ExtResource("2_y2vno")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
