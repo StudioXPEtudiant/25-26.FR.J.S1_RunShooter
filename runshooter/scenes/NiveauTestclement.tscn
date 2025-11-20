@@ -1,24 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgbqkyciveuku"]
+[gd_scene load_steps=11 format=3 uid="uid://b0m513683xpnm"]
 
-[ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_6676m"]
-[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_v5gs2"]
-[ext_resource type="Texture2D" uid="uid://b7js4cn4le1dh" path="res://Textures/Damier.png" id="3_wcrq0"]
-[ext_resource type="Script" path="res://scripts/hud.gd" id="11_w4ihv"]
-[ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="12_on3nk"]
-[ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="13_44vcq"]
+[ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_ydaxv"]
+[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_q23yg"]
+[ext_resource type="Texture2D" uid="uid://b7js4cn4le1dh" path="res://Textures/Damier.png" id="3_q1xwa"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="4_5wfc3"]
+[ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="5_d5ocg"]
+[ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="6_ppmjo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edb4p"]
-albedo_texture = ExtResource("3_wcrq0")
+albedo_texture = ExtResource("3_q1xwa")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6xnt"]
 albedo_color = Color(0.6, 0.713726, 0.227451, 1)
-albedo_texture = ExtResource("3_wcrq0")
+albedo_texture = ExtResource("3_q1xwa")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bpj70"]
 data = PackedVector3Array(-6.02177, -0.5, 7.95331, -6.02177, -0.5, -7.95331, -6.02177, 0.5, -7.95331, 6.02177, -0.5, -7.95331, -6.02177, -0.5, -7.95331, -6.02177, -0.5, 7.95331, -6.02177, 0.5, -7.95331, -6.02177, -0.5, -7.95331, 6.02177, -0.5, -7.95331, -6.02177, 0.5, -7.95331, -6.02177, 0.5, 7.95331, -6.02177, -0.5, 7.95331, -6.02177, -0.5, 7.95331, -6.02177, 0.5, 7.95331, 6.02177, 0.5, 7.95331, 6.02177, 0.5, 7.95331, -6.02177, 0.5, 7.95331, -6.02177, 0.5, -7.95331, -6.02177, -0.5, 7.95331, 6.02177, -0.5, 7.95331, 6.02177, -0.5, -7.95331, 6.02177, 0.5, 7.95331, 6.02177, -0.5, 7.95331, -6.02177, -0.5, 7.95331, 6.02177, -0.5, -7.95331, 6.02177, -0.5, 7.95331, 6.02177, 0.5, 7.95331, 6.02177, -0.5, -7.95331, 6.02177, 0.5, -7.95331, -6.02177, 0.5, -7.95331, -6.02177, 0.5, -7.95331, 6.02177, 0.5, -7.95331, 6.02177, 0.5, 7.95331, 6.02177, 0.5, 7.95331, 6.02177, 0.5, -7.95331, 6.02177, -0.5, -7.95331)
 
 [sub_resource type="LabelSettings" id="LabelSettings_38ys3"]
-font = ExtResource("13_44vcq")
+font = ExtResource("6_ppmjo")
 font_size = 48
 shadow_color = Color(0, 0, 0, 0.376471)
 shadow_offset = Vector2(2, 2)
@@ -26,9 +26,9 @@ shadow_offset = Vector2(2, 2)
 [node name="Main" type="Node3D"]
 
 [node name="Environment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_6676m")
+environment = ExtResource("1_ydaxv")
 
-[node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_v5gs2")]
+[node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_q23yg")]
 view = NodePath("../View")
 
 [node name="View" type="Node3D" parent="."]
@@ -59,7 +59,7 @@ shadow_enabled = true
 shadow_opacity = 0.75
 
 [node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource("11_w4ihv")
+script = ExtResource("4_5wfc3")
 
 [node name="Icon" type="TextureRect" parent="HUD"]
 offset_left = 57.0
@@ -67,7 +67,7 @@ offset_top = 67.0
 offset_right = 313.0
 offset_bottom = 323.0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("12_on3nk")
+texture = ExtResource("5_d5ocg")
 
 [node name="x" type="Label" parent="HUD"]
 offset_left = 112.0
