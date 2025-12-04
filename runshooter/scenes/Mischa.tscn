@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://xpxmv06usxul"]
+
+[ext_resource type="PackedScene" uid="uid://cg1fmxryw44pl" path="res://objects/planks.tscn" id="1_j2wfb"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="planks" parent="." instance=ExtResource("1_j2wfb")]
+transform = Transform3D(0.238747, 0, 0, 0, 0.238747, 0, 0, 0, 0.238747, 0, 0, 0)
