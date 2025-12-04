@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc85pbddel18a"]
+
+[ext_resource type="Script" uid="uid://ki4krbh3250e" path="res://zonedintercactionpush.gd" id="1_fkdky"]
+[ext_resource type="Script" uid="uid://scheshpegys3" path="res://label_3d.gd" id="2_fkdky"]
+[ext_resource type="Script" uid="uid://cb1egf52k2ny1" path="res://progressbarbutton.gd" id="3_v7cul"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eagls"]
+radius = 0.8717456
+
+[node name="zone d\'interaction" type="Area3D"]
+script = ExtResource("1_fkdky")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_eagls")
+
+[node name="Label3D" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1.138559, 9.953599e-08, 1.6442881, -1.7484555e-07, -2, 0, 1.6442881, -1.4374822e-07, 1.138559, 0, 0.7882497, 0)
+script = ExtResource("2_fkdky")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="timerbouton" type="Timer" parent="CanvasLayer"]
+unique_name_in_owner = true
+wait_time = 0.5
+
+[node name="ProgressBarbouton" type="ProgressBar" parent="CanvasLayer"]
+unique_name_in_owner = true
+self_modulate = Color(1, 0, 0, 1)
+offset_top = 1.0
+offset_right = 172.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+script = ExtResource("3_v7cul")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="on_just_pressed" from="." to="CanvasLayer/ProgressBarbouton" method="_on_zone_dinteraction_on_just_pressed"]
+[connection signal="on_pressed" from="." to="CanvasLayer/ProgressBarbouton" method="_on_zone_dinteraction_on_pressed"]
+[connection signal="on_realsed" from="." to="CanvasLayer/ProgressBarbouton" method="_on_zone_dinteraction_on_realsed"]
+[connection signal="timeout" from="CanvasLayer/timerbouton" to="CanvasLayer/ProgressBarbouton" method="_on_timerbouton_timeout"]
