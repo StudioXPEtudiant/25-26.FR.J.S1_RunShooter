@@ -53,6 +53,565 @@ material = SubResource("StandardMaterial3D_p6xnt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
 shape = SubResource("ConcavePolygonShape3D_bpj70")
 
+[node name="Ground30" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.1186, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground2" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.9054)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground31" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0943241, 11.9957, 15.9054)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground3" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8625, 0, 15.9054)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground32" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8625, 11.9546, 15.9054)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground32"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground32"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground4" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8625, 0, 0.179546)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground35" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8625, 12.0295, 0.179546)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground5" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8625, 0, -15.6136)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground37" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8625, 11.9324, -15.6136)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground6" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.058815, 0, -15.6136)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground38" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.058815, 11.9463, -15.6136)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground7" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3247, 0, -15.6136)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground39" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3247, 11.9504, -15.6136)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground8" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3247, 0, -0.278683)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground42" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3247, 11.9994, -0.278683)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground42"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground42"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground9" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3247, 0, 15.6022)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground44" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3247, 12.0828, 15.6022)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground10" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1949, 0, 15.6022)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground43" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1949, 12.1075, 15.6022)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground43"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground43"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground11" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1949, 0, -0.180507)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground41" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1949, 12.0636, -0.180507)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground41"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground41"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground12" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1949, 0, -16.3541)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground40" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1949, 11.904, -16.3541)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground40"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground40"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground13" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6774, 0, -16.3541)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground36" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6774, 11.9163, -16.3541)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground14" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6774, 0, -0.647735)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground34" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6774, 11.9401, -0.647735)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground34"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground34"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground15" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6774, 0, 15.3423)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground33" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6774, 11.9497, 15.3423)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground33"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground33"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground16" type="StaticBody3D" parent="World"]
+transform = Transform3D(0.047089, -0.998891, 0, 0.998891, 0.047089, 0, 0, 0, 1, -30.5919, 7.11183, 15.3423)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground17" type="StaticBody3D" parent="World"]
+transform = Transform3D(0.047089, -0.998891, 0, 0.998891, 0.047089, 0, 0, 0, 1, -30.5919, 7.11183, -0.413897)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground18" type="StaticBody3D" parent="World"]
+transform = Transform3D(0.047089, -0.998891, 0, 0.998891, 0.047089, 0, 0, 0, 1, -30.5919, 7.11183, -16.2401)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground19" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.000213681, 0.00453275, -0.99999, 0.998891, 0.047089, 0, 0.0470886, -0.99888, -0.00453781, -22.3501, 7.11183, -24.3151)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground29" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.000213681, 0.00453275, -0.99999, 0.998891, 0.047089, 0, 0.0470886, -0.99888, -0.00453781, -21.9879, 7.11183, 23.6458)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground20" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.000213681, 0.00453275, -0.99999, 0.998891, 0.047089, 0, 0.0470886, -0.99888, -0.00453781, -6.0799, 7.11183, -24.3151)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground28" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.000213681, 0.00453275, -0.99999, 0.998891, 0.047089, 0, 0.0470886, -0.99888, -0.00453781, -6.0799, 7.11183, 23.5146)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground21" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.000213681, 0.00453275, -0.99999, 0.998891, 0.047089, 0, 0.0470886, -0.99888, -0.00453781, 9.27022, 7.11183, -24.2333)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground26" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.000213681, 0.00453275, -0.99999, 0.998891, 0.047089, 0, 0.0470886, -0.99888, -0.00453781, 9.27022, 7.11183, 23.6401)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground22" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.000213681, 0.00453275, -0.99999, 0.998891, 0.047089, 0, 0.0470886, -0.99888, -0.00453781, 19.3216, 7.11183, -24.2333)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground27" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.000213681, 0.00453275, -0.99999, 0.998891, 0.047089, 0, 0.0470886, -0.99888, -0.00453781, 19.3216, 7.11183, 23.7707)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground23" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.065517, -0.996785, 0.0461274, 0.997784, -0.0659811, -0.00861129, 0.0116271, 0.045461, 0.998898, 27.6521, 7.11183, -16.1077)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground24" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.065517, -0.996785, 0.0461274, 0.997784, -0.0659811, -0.00861129, 0.0116271, 0.045461, 0.998898, 27.6521, 7.11183, 0.00258446)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Ground25" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.065517, -0.996785, 0.0461274, 0.997784, -0.0659811, -0.00861129, 0.0116271, 0.045461, 0.998898, 27.5746, 7.1461, 15.4894)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
 shadow_enabled = true
