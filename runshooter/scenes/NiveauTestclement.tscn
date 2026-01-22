@@ -3,7 +3,7 @@
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_ydaxv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_q23yg"]
 [ext_resource type="Texture2D" uid="uid://b7js4cn4le1dh" path="res://Textures/Damier.png" id="3_q1xwa"]
-[ext_resource type="Script" path="res://scripts/hud.gd" id="4_5wfc3"]
+[ext_resource type="Script" uid="uid://cnq023kbmwkj7" path="res://scripts/hud.gd" id="4_5wfc3"]
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="5_d5ocg"]
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="6_ppmjo"]
 
@@ -35,7 +35,7 @@ view = NodePath("../View")
 transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, 0, 0)
 
 [node name="Camera" type="Camera3D" parent="View"]
-transform = Transform3D(0.72756, -0.49566, 0.474317, 0.299917, 0.851614, 0.429888, -0.617014, -0.170514, 0.768258, 5.12415, 4.70023, 8.91888)
+transform = Transform3D(0.978147, 0.00362849, -0.20788, 2.98023e-08, 0.999848, 0.0174521, 0.207912, -0.0170711, 0.977999, -2.5188, -0.00622153, 11.135)
 current = true
 fov = 40.0
 
