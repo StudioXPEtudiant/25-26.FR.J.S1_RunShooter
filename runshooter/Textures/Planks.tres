@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://74meoyf2jwh4"]
+
+[ext_resource type="Texture2D" uid="uid://b7m0na8jk22ed" path="res://Textures/Planks_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bxjnif2lps60u" path="res://Textures/Planks_normal.png" id="3"]
+
+[resource]
+albedo_color = Color(0.492188, 0.357605, 0, 1)
+albedo_texture = ExtResource("1")
+normal_enabled = true
+normal_texture = ExtResource("3")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://2gvpqerd0hok"]
+
+[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="1_s5y5h"]
+[ext_resource type="Script" uid="uid://d2sjmoy16ghwm" path="res://camera.gd" id="2_ndjam"]
+[ext_resource type="Texture2D" uid="uid://b7js4cn4le1dh" path="res://Textures/Damier.png" id="3_xffam"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5y5h"]
+albedo_texture = ExtResource("3_xffam")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndjam"]
+albedo_color = Color(0.6, 0.713726, 0.227451, 1)
+albedo_texture = ExtResource("3_xffam")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xffam"]
+data = PackedVector3Array(-6.02177, -0.5, 7.95331, -6.02177, -0.5, -7.95331, -6.02177, 0.5, -7.95331, 6.02177, -0.5, -7.95331, -6.02177, -0.5, -7.95331, -6.02177, -0.5, 7.95331, -6.02177, 0.5, -7.95331, -6.02177, -0.5, -7.95331, 6.02177, -0.5, -7.95331, -6.02177, 0.5, -7.95331, -6.02177, 0.5, 7.95331, -6.02177, -0.5, 7.95331, -6.02177, -0.5, 7.95331, -6.02177, 0.5, 7.95331, 6.02177, 0.5, 7.95331, 6.02177, 0.5, 7.95331, -6.02177, 0.5, 7.95331, -6.02177, 0.5, -7.95331, -6.02177, -0.5, 7.95331, 6.02177, -0.5, 7.95331, 6.02177, -0.5, -7.95331, 6.02177, 0.5, 7.95331, 6.02177, -0.5, 7.95331, -6.02177, -0.5, 7.95331, 6.02177, -0.5, -7.95331, 6.02177, -0.5, 7.95331, 6.02177, 0.5, 7.95331, 6.02177, -0.5, -7.95331, 6.02177, 0.5, -7.95331, -6.02177, 0.5, -7.95331, -6.02177, 0.5, -7.95331, 6.02177, 0.5, -7.95331, 6.02177, 0.5, 7.95331, 6.02177, 0.5, 7.95331, 6.02177, 0.5, -7.95331, 6.02177, -0.5, -7.95331)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_s5y5h")]
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(-0.999119, -0.00659555, 0.0414414, -1.24312e-09, 0.987571, 0.157176, -0.0419629, 0.157037, -0.986701, 0, 1.82468, -3.92573)
+script = ExtResource("2_ndjam")
+
+[node name="View" type="Node3D" parent="."]
+transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, 0, 0)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+material_override = SubResource("StandardMaterial3D_s5y5h")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_ndjam")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650314, 0, -0.11554)
+shape = SubResource("ConcavePolygonShape3D_xffam")
