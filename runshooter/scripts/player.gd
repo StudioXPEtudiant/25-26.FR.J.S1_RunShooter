@@ -9,6 +9,7 @@ signal coin_collected
 @export var movement_speed = 250
 @export var jump_strength = 7
 @export var mouse_sensitivity = 0.005
+@onready var spring_arm = $View/CameraPivot/SpringArm3D
 
 var movement_velocity: Vector3
 var gravity = 0
@@ -55,7 +56,7 @@ func _input(event):
 		camera_rotation_x = clamp(
 			camera_rotation_x,
 			deg_to_rad(-70),
-			deg_to_rad(20)
+			deg_to_rad(0.25)
 		)
 
 		pivot.rotation.x = camera_rotation_x
