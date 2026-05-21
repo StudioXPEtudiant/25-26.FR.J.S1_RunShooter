@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dst65r5yvj13h"]
+[gd_scene load_steps=18 format=3 uid="uid://dst65r5yvj13h"]
 
 [ext_resource type="PackedScene" uid="uid://dc85pbddel18a" path="res://managerinteractable.tscn" id="1_a8y0u"]
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_ahusb"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://objects/platform_medium.tscn" id="7_ixpj3"]
 [ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://objects/platform_grass_large_round.tscn" id="8_4oh1e"]
 [ext_resource type="PackedScene" uid="uid://c8up71en5djgm" path="res://objects/platform_falling.tscn" id="9_2fnpo"]
-[ext_resource type="PackedScene" uid="uid://dtjvjdjl8cs6e" path="res://models/flag.glb" id="9_fw1f5"]
+[ext_resource type="PackedScene" uid="uid://dtjvjdjl8cs6e" path="res://objects/models/flag.glb" id="9_fw1f5"]
 [ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://objects/coin.tscn" id="10_fwhys"]
 [ext_resource type="Script" uid="uid://cnq023kbmwkj7" path="res://scripts/hud.gd" id="11_apvpm"]
 [ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://objects/cloud.tscn" id="13_drtpy"]
@@ -20,6 +20,11 @@ font = ExtResource("17_tk810")
 font_size = 48
 shadow_color = Color(0, 0, 0, 0.376471)
 shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhanl"]
+albedo_color = Color(0.137916, 0.0720623, 3.60981e-08, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wjb8"]
 
 [node name="Main" type="Node3D"]
 
@@ -166,5 +171,14 @@ offset_right = 368.0
 offset_bottom = 123.0
 text = "0"
 label_settings = SubResource("LabelSettings_38ys3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1.38661, 0, 0, 0, 0.0316071, 0, 0, 0, 3.86014, 0.0922554, 2.83417, 6.7306)
+material_override = SubResource("StandardMaterial3D_hhanl")
+size = Vector3(1.19238, 1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.098347, 0, 0, 0, 0.0267098, 0, 0, 0, 3.86014, 0.799461, 2.90257, 6.70439)
+material_override = SubResource("StandardMaterial3D_3wjb8")
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
