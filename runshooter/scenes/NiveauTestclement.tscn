@@ -29,15 +29,16 @@ shadow_offset = Vector2(2, 2)
 environment = ExtResource("1_ydaxv")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_q23yg")]
-view = NodePath("../View")
+view = NodePath("View")
 
-[node name="View" type="Node3D" parent="."]
-transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, 0, 0)
+[node name="View" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
 
-[node name="Camera" type="Camera3D" parent="View"]
-transform = Transform3D(0.978147, 0.00362849, -0.20788, 2.98023e-08, 0.999848, 0.0174521, 0.207912, -0.0170711, 0.977999, -2.5188, -0.00622153, 11.135)
-current = true
-fov = 40.0
+[node name="CameraPivot" type="Node3D" parent="Player/View"]
+transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, 0, 1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/View/CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.933355, 0.358954, 0, -0.358955, 0.933356, 0, 2.79482, 5.26381)
 
 [node name="World" type="Node3D" parent="."]
 

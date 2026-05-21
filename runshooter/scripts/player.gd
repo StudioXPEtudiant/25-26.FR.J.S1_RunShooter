@@ -8,9 +8,9 @@ signal coin_collected
 @export_subgroup("Properties")
 @export var movement_speed = 250
 @export var jump_strength = 7
+@export var mouse_sensitivity = 0.005
 
 var movement_velocity: Vector3
-var rotation_direction: float
 var gravity = 0
 
 var previously_floored = false
@@ -20,57 +20,94 @@ var jump_double = true
 
 var coins = 0
 
+# Rotation verticale caméra
+var camera_rotation_x = 0.0
+
+@onready var pivot = $View/CameraPivot
+
 @onready var particles_trail = $ParticlesTrail
 @onready var sound_footsteps = $SoundFootsteps
 @onready var model = $Character
 @onready var animation = $Character/AnimationPlayer
 
-# Functions
+# =========================
+# READY
+# =========================
+
+func _ready():
+
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+# =========================
+# SOURIS
+# =========================
+
+func _input(event):
+
+	if event is InputEventMouseMotion:
+
+		# Rotation gauche/droite
+		view.rotate_y(-event.relative.x * mouse_sensitivity)
+
+		# Rotation haut/bas
+		camera_rotation_x -= event.relative.y * mouse_sensitivity
+
+		camera_rotation_x = clamp(
+			camera_rotation_x,
+			deg_to_rad(-70),
+			deg_to_rad(20)
+		)
+
+		pivot.rotation.x = camera_rotation_x
+
+# =========================
+# PHYSICS
+# =========================
 
 func _physics_process(delta):
 
-	# Handle functions
+	# La caméra suit le joueur
+	view.global_position = global_position
 
 	handle_controls(delta)
 	handle_gravity(delta)
-
 	handle_effects(delta)
-
-	# Movement
 
 	var applied_velocity: Vector3
 
-	applied_velocity = velocity.lerp(movement_velocity, delta * 10)
+	applied_velocity = velocity.lerp(
+		movement_velocity,
+		delta * 10
+	)
+
 	applied_velocity.y = -gravity
 
 	velocity = applied_velocity
+
 	move_and_slide()
 
-	# Rotation
-
-	if Vector2(velocity.z, velocity.x).length() > 0:
-		rotation_direction = Vector2(velocity.z, velocity.x).angle()
-
-	rotation.y = lerp_angle(rotation.y, rotation_direction, delta * 10)
-
-	# Falling/respawning
-
+	# Respawn si chute
 	if position.y < -10:
 		get_tree().reload_current_scene()
 
-	# Animation for scale (jumping and landing)
+	# Animation scale
+	model.scale = model.scale.lerp(
+		Vector3(1, 1, 1),
+		delta * 10
+	)
 
-	model.scale = model.scale.lerp(Vector3(1, 1, 1), delta * 10)
-
-	# Animation when landing
-
+	# Effet atterrissage
 	if is_on_floor() and gravity > 2 and !previously_floored:
+
 		model.scale = Vector3(1.25, 0.75, 1.25)
+
 		Audio.play("res://sounds/land.ogg")
 
 	previously_floored = is_on_floor()
 
-# Handle animation(s)
+# =========================
+# EFFECTS
+# =========================
 
 func handle_effects(delta):
 
@@ -78,9 +115,16 @@ func handle_effects(delta):
 	sound_footsteps.stream_paused = true
 
 	if is_on_floor():
-		var horizontal_velocity = Vector2(velocity.x, velocity.z)
+
+		var horizontal_velocity = Vector2(
+			velocity.x,
+			velocity.z
+		)
+
 		var speed_factor = horizontal_velocity.length() / movement_speed / delta
+
 		if speed_factor > 0.05:
+
 			if animation.current_animation != "walk":
 				animation.play("walk", 0.1)
 
@@ -92,36 +136,68 @@ func handle_effects(delta):
 				particles_trail.emitting = true
 
 		elif animation.current_animation != "idle":
+
 			animation.play("idle", 0.1)
+
 	elif animation.current_animation != "jump":
+
 		animation.play("jump", 0.1)
 
-# Handle movement input
+# =========================
+# CONTROLS
+# =========================
 
 func handle_controls(delta):
-
-	# Movement
 
 	var input := Vector3.ZERO
 
 	input.x = Input.get_axis("move_left", "move_right")
 	input.z = Input.get_axis("move_forward", "move_back")
 
-	input = input.rotated(Vector3.UP, view.rotation.y)
+	# Direction caméra
+	var camera_basis = view.global_transform.basis
 
-	if input.length() > 1:
-		input = input.normalized()
+	var forward = -camera_basis.z
+	var right = camera_basis.x
 
-	movement_velocity = input * movement_speed * delta
+	# Ignore la hauteur
+	forward.y = 0
+	right.y = 0
 
-	# Jumping
+	forward = forward.normalized()
+	right = right.normalized()
 
+	# Direction finale
+	var direction = (right * input.x) - (forward * input.z)
+
+	if direction.length() > 1:
+		direction = direction.normalized()
+
+	movement_velocity = direction * movement_speed * delta
+
+	# Orientation personnage
+	if direction.length() > 0:
+
+		model.rotation.y = lerp_angle(
+			model.rotation.y,
+			atan2(direction.x, direction.z),
+			delta * 10
+		)
+
+	if direction.length() > 1:
+		direction = direction.normalized()
+
+	movement_velocity = direction * movement_speed * delta
+
+	# Jump
 	if Input.is_action_just_pressed("jump"):
 
 		if jump_single or jump_double:
 			jump()
 
-# Handle gravity
+# =========================
+# GRAVITY
+# =========================
 
 func handle_gravity(delta):
 
@@ -132,7 +208,9 @@ func handle_gravity(delta):
 		jump_single = true
 		gravity = 0
 
-# Jumping
+# =========================
+# JUMP
+# =========================
 
 func jump():
 
@@ -143,12 +221,17 @@ func jump():
 	model.scale = Vector3(0.5, 1.5, 0.5)
 
 	if jump_single:
-		jump_single = false;
-		jump_double = true;
-	else:
-		jump_double = false;
 
-# Collecting coins
+		jump_single = false
+		jump_double = true
+
+	else:
+
+		jump_double = false
+
+# =========================
+# COINS
+# =========================
 
 func collect_coin():
 

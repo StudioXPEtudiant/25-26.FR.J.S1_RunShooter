@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cg1fmxryw44pl" path="res://objects/planks.tscn" id="1_j2wfb"]
 [ext_resource type="PackedScene" uid="uid://bq6apx1yb47i0" path="res://objects/Fusil de chase.glb" id="2_11glk"]
 [ext_resource type="PackedScene" uid="uid://bp4b6ec6jhsoi" path="res://objects/Glock 19.glb" id="3_ykl3c"]
-[ext_resource type="Material" path="res://Textures/Planks.tres" id="4_ykl3c"]
+[ext_resource type="Material" uid="uid://74meoyf2jwh4" path="res://Textures/Planks.tres" id="4_ykl3c"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vy5vc"]
 
