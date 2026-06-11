@@ -23,7 +23,6 @@ var coins = 0
 # Rotation verticale caméra
 var camera_rotation_x = 0.0
 
-@onready var pivot = $View/CameraPivot
 
 @onready var particles_trail = $ParticlesTrail
 @onready var sound_footsteps = $SoundFootsteps
@@ -58,7 +57,6 @@ func _input(event):
 			deg_to_rad(20)
 		)
 
-		pivot.rotation.x = camera_rotation_x
 
 # =========================
 # PHYSICS
