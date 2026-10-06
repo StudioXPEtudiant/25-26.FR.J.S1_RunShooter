@@ -9,7 +9,8 @@ signal coin_collected
 @export var movement_speed = 250
 @export var jump_strength = 7
 @export var mouse_sensitivity = 0.005
-@onready var spring_arm = $View/CameraPivot/SpringArm3D
+@onready var spring_arm = $"../View"
+@onready var interaction_area: Area3D = $InteractionArea
 
 var movement_velocity: Vector3
 var gravity = 0
@@ -24,6 +25,7 @@ var coins = 0
 # Rotation verticale caméra
 var camera_rotation_x = 0.0
 
+var npc_nearby: Node = null
 
 @onready var particles_trail = $ParticlesTrail
 @onready var sound_footsteps = $SoundFootsteps
@@ -37,6 +39,8 @@ var camera_rotation_x = 0.0
 func _ready():
 
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	interaction_area.body_entered.connect(_on_body_entered)
+	interaction_area.body_exited.connect(_on_body_exited)
 
 # =========================
 # SOURIS
@@ -150,8 +154,8 @@ func handle_controls(delta):
 
 	var input := Vector3.ZERO
 
-	input.x = Input.get_axis("move_left", "move_right")
-	input.z = Input.get_axis("move_forward", "move_back")
+	input.x = Input.get_axis("move_right", "move_left")
+	input.z = Input.get_axis("move_back", "move_forward")
 
 	# Direction caméra
 	var camera_basis = view.global_transform.basis
@@ -227,6 +231,30 @@ func jump():
 	else:
 
 		jump_double = false
+
+# =========================
+# NPC INTERACTION
+# =========================
+
+func _on_body_entered(body: Node3D):
+
+
+	if body.has_method("interact"):
+		npc_nearby = body
+
+func _on_body_exited(body: Node3D):
+
+
+	if body == npc_nearby:
+		npc_nearby = null
+
+func _process(_delta):
+
+	if Input.is_action_just_pressed("Interact"):
+		
+		
+		if npc_nearby != null:
+			npc_nearby.interact()
 
 # =========================
 # COINS
