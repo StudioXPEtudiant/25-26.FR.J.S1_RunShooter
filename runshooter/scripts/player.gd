@@ -37,8 +37,8 @@ var npc_nearby: Node = null
 # =========================
 
 func _ready():
-
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 	interaction_area.body_entered.connect(_on_body_entered)
 	interaction_area.body_exited.connect(_on_body_exited)
 
@@ -237,22 +237,22 @@ func jump():
 # =========================
 
 func _on_body_entered(body: Node3D):
-
-
 	if body.has_method("interact"):
 		npc_nearby = body
 
+		if body.has_method("set_interaction_visible"):
+			body.set_interaction_visible(true)
+
 func _on_body_exited(body: Node3D):
-
-
 	if body == npc_nearby:
+		if body.has_method("set_interaction_visible"):
+			body.set_interaction_visible(false)
+
 		npc_nearby = null
 
-func _process(_delta):
 
+func _process(_delta):
 	if Input.is_action_just_pressed("Interact"):
-		
-		
 		if npc_nearby != null:
 			npc_nearby.interact()
 

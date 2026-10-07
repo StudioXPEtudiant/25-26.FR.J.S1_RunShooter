@@ -37,6 +37,7 @@ shadow_offset = Vector2(2, 2)
 environment = ExtResource("1_6676m")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_v5gs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2.36094)
 view = NodePath("../View")
 
 [node name="InteractionArea" type="Area3D" parent="Player"]
@@ -45,7 +46,7 @@ view = NodePath("../View")
 shape = SubResource("SphereShape3D_dftjh")
 
 [node name="View" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0.976511, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0.976511, -2.36094)
 
 [node name="Camera" type="Camera3D" parent="View"]
 transform = Transform3D(-1, 3.69464e-08, -7.92319e-08, 0, 0.906308, 0.422618, 8.74228e-08, 0.422618, -0.906308, 0, 2.5, -4)
@@ -107,5 +108,20 @@ mesh = SubResource("BoxMesh_q7sjd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPC"]
 shape = SubResource("BoxShape3D_5ldyi")
+
+[node name="InteractionUI" type="Node3D" parent="NPC"]
+
+[node name="InteractionIcon" type="Label3D" parent="NPC/InteractionUI"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.901, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0)
+text = "E"
+outline_size = 0
+
+[node name="InteractionArrow" type="Label3D" parent="NPC/InteractionUI"]
+transform = Transform3D(1.26253, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88699, 0)
+pixel_size = 0.009
+modulate = Color(0.588235, 1, 1, 1)
+text = "▼"
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]

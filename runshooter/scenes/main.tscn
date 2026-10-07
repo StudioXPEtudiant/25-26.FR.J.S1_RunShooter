@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dst65r5yvj13h"]
+[gd_scene load_steps=19 format=3 uid="uid://dst65r5yvj13h"]
 
 [ext_resource type="PackedScene" uid="uid://dc85pbddel18a" path="res://managerinteractable.tscn" id="1_a8y0u"]
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_ahusb"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://objects/cloud.tscn" id="13_drtpy"]
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="13_jfda3"]
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="17_tk810"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wdb5o"]
+radius = 1.94486
 
 [sub_resource type="LabelSettings" id="LabelSettings_38ys3"]
 font = ExtResource("17_tk810")
@@ -37,6 +40,11 @@ environment = ExtResource("1_ahusb")
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_onms2")]
 unique_name_in_owner = true
 view = NodePath("../View")
+
+[node name="InteractionArea" type="Area3D" parent="Player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/InteractionArea"]
+shape = SubResource("SphereShape3D_wdb5o")
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, 0, 0)
