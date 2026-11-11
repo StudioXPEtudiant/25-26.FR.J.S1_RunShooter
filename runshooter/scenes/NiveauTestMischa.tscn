@@ -1,0 +1,442 @@
+[gd_scene load_steps=22 format=3 uid="uid://dgbqkyciveuku"]
+
+[ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_rktpv"]
+[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_bkxl6"]
+[ext_resource type="Texture2D" uid="uid://b7js4cn4le1dh" path="res://Textures/Damier.png" id="3_6fwpm"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="4_3lic6"]
+[ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="5_iv5fw"]
+[ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="6_xl6kg"]
+[ext_resource type="Script" path="res://scripts/NPC_Interaction.gd" id="7_l1wwc"]
+[ext_resource type="PackedScene" uid="uid://m52j48ghlqal" path="res://objects/models/Sol.glb" id="8_g8npl"]
+[ext_resource type="PackedScene" uid="uid://bwly52kryi50g" path="res://objects/models/Mur.glb" id="9_67ddl"]
+[ext_resource type="PackedScene" uid="uid://c2d0y4h6oiicq" path="res://objects/models/Toit.glb" id="10_mdrs7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dftjh"]
+radius = 1.94486
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edb4p"]
+albedo_texture = ExtResource("3_6fwpm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6xnt"]
+albedo_color = Color(0.6, 0.713726, 0.227451, 1)
+albedo_texture = ExtResource("3_6fwpm")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bpj70"]
+data = PackedVector3Array(-6.02177, -0.5, 7.95331, -6.02177, -0.5, -7.95331, -6.02177, 0.5, -7.95331, 6.02177, -0.5, -7.95331, -6.02177, -0.5, -7.95331, -6.02177, -0.5, 7.95331, -6.02177, 0.5, -7.95331, -6.02177, -0.5, -7.95331, 6.02177, -0.5, -7.95331, -6.02177, 0.5, -7.95331, -6.02177, 0.5, 7.95331, -6.02177, -0.5, 7.95331, -6.02177, -0.5, 7.95331, -6.02177, 0.5, 7.95331, 6.02177, 0.5, 7.95331, 6.02177, 0.5, 7.95331, -6.02177, 0.5, 7.95331, -6.02177, 0.5, -7.95331, -6.02177, -0.5, 7.95331, 6.02177, -0.5, 7.95331, 6.02177, -0.5, -7.95331, 6.02177, 0.5, 7.95331, 6.02177, -0.5, 7.95331, -6.02177, -0.5, 7.95331, 6.02177, -0.5, -7.95331, 6.02177, -0.5, 7.95331, 6.02177, 0.5, 7.95331, 6.02177, -0.5, -7.95331, 6.02177, 0.5, -7.95331, -6.02177, 0.5, -7.95331, -6.02177, 0.5, -7.95331, 6.02177, 0.5, -7.95331, 6.02177, 0.5, 7.95331, 6.02177, 0.5, 7.95331, 6.02177, 0.5, -7.95331, 6.02177, -0.5, -7.95331)
+
+[sub_resource type="LabelSettings" id="LabelSettings_38ys3"]
+font = ExtResource("6_xl6kg")
+font_size = 48
+shadow_color = Color(0, 0, 0, 0.376471)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7sjd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ldyi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgk8j"]
+size = Vector3(10.0278, 0.361267, 12.165)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7671a"]
+size = Vector3(0.25415, 2.01404, 12.0083)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hjrp8"]
+size = Vector3(4, 2, 0.263794)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fbh4b"]
+size = Vector3(9.8, 2.0069, 0.255859)
+
+[node name="Main" type="Node3D"]
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_rktpv")
+
+[node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_bkxl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 4)
+view = NodePath("../View")
+
+[node name="InteractionArea" type="Area3D" parent="Player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/InteractionArea"]
+shape = SubResource("SphereShape3D_dftjh")
+
+[node name="View" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, -0.264695, 4.96554)
+
+[node name="Camera" type="Camera3D" parent="View"]
+transform = Transform3D(-1, 3.69464e-08, -7.92319e-08, 2.37169e-08, 0.986971, 0.160897, 8.41443e-08, 0.160897, -0.986972, 0, 1.5, -4)
+current = true
+fov = 40.0
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Ground" type="StaticBody3D" parent="World"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -0.116)
+material_override = SubResource("StandardMaterial3D_edb4p")
+size = Vector3(12.0435, 1, 15.9066)
+material = SubResource("StandardMaterial3D_p6xnt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="World/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -0.116)
+shape = SubResource("ConcavePolygonShape3D_bpj70")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
+shadow_enabled = true
+shadow_opacity = 0.75
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("4_3lic6")
+
+[node name="Icon" type="TextureRect" parent="HUD"]
+offset_left = 57.0
+offset_top = 67.0
+offset_right = 313.0
+offset_bottom = 323.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_iv5fw")
+
+[node name="x" type="Label" parent="HUD"]
+offset_left = 112.0
+offset_top = 64.0
+offset_right = 144.0
+offset_bottom = 123.0
+text = "×"
+label_settings = SubResource("LabelSettings_38ys3")
+
+[node name="Coins" type="Label" parent="HUD"]
+offset_left = 144.0
+offset_top = 64.0
+offset_right = 368.0
+offset_bottom = 123.0
+text = "0"
+label_settings = SubResource("LabelSettings_38ys3")
+
+[node name="NPC" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 6.755)
+script = ExtResource("7_l1wwc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NPC"]
+mesh = SubResource("BoxMesh_q7sjd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC"]
+shape = SubResource("BoxShape3D_5ldyi")
+
+[node name="InteractionUI" type="Node3D" parent="NPC"]
+
+[node name="InteractionIcon" type="Label3D" parent="NPC/InteractionUI"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.901, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0)
+text = "E"
+outline_size = 0
+
+[node name="InteractionArrow" type="Label3D" parent="NPC/InteractionUI"]
+transform = Transform3D(1.26253, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88699, 0)
+pixel_size = 0.009
+modulate = Color(0.588235, 1, 1, 1)
+text = "▼"
+
+[node name="Sol" type="Node3D" parent="."]
+
+[node name="Sol" parent="Sol" instance=ExtResource("8_g8npl")]
+
+[node name="Sol5" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Sol2" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Sol3" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Sol4" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Sol6" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Sol7" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="Sol8" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Sol9" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="Sol10" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+
+[node name="Sol11" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Sol12" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="Sol13" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="Sol14" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="Sol15" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+
+[node name="Sol16" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Sol17" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
+
+[node name="Sol18" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="Sol19" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+
+[node name="Sol20" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="Sol21" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Sol22" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
+
+[node name="Sol23" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="Sol24" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+
+[node name="Sol26" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="Sol27" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 8)
+
+[node name="Sol28" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
+
+[node name="Sol29" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8)
+
+[node name="Sol30" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="Sol31" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="Sol32" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10)
+
+[node name="Sol33" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 10)
+
+[node name="Sol34" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 10)
+
+[node name="Sol35" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 10)
+
+[node name="Sol25" parent="Sol" instance=ExtResource("8_g8npl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sol"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sol/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.187, 3)
+shape = SubResource("BoxShape3D_vgk8j")
+
+[node name="Mur" type="Node3D" parent="."]
+
+[node name="Mur" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Mur2" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Mur3" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="Mur4" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="Mur5" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
+
+[node name="Mur6" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 10)
+
+[node name="Mur7" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0, 6)
+
+[node name="Mur8" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0, 4)
+
+[node name="Mur9" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0, 2)
+
+[node name="Mur10" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0, 0)
+
+[node name="Mur11" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0, -2)
+
+[node name="Mur12" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0, -4)
+
+[node name="Mur13" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2, 0, 6)
+
+[node name="Mur14" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0, 0, 6)
+
+[node name="Mur15" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -2, 0, 6)
+
+[node name="Mur16" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -4, 0, 6)
+
+[node name="Mur17" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -6, 0, 6)
+
+[node name="Mur18" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, -4.76837e-07)
+
+[node name="Mur19" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -4.76837e-07)
+
+[node name="Mur20" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, -9.53674e-07)
+
+[node name="Mur21" parent="Mur" instance=ExtResource("9_67ddl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, -9.53674e-07)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mur"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mur/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.875, 1, 3)
+shape = SubResource("BoxShape3D_7671a")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Mur"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mur/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.875, 1, 3)
+shape = SubResource("BoxShape3D_7671a")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Mur"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mur/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -2.855)
+shape = SubResource("BoxShape3D_hjrp8")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Mur"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mur/StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -2.855)
+shape = SubResource("BoxShape3D_hjrp8")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Mur"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mur/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, 1.00345, 8.87207)
+shape = SubResource("BoxShape3D_fbh4b")
+
+[node name="Toit" type="Node3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 1.7, 2, 11.75)
+
+[node name="Toit" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0.25)
+
+[node name="Toit2" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, -1.75)
+
+[node name="Toit3" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, -3.75)
+
+[node name="Toit4" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, -5.75)
+
+[node name="Toit5" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, -7.75)
+
+[node name="Toit6" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0.25)
+
+[node name="Toit7" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, -1.75)
+
+[node name="Toit8" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, -3.75)
+
+[node name="Toit9" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, -5.75)
+
+[node name="Toit10" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, -7.75)
+
+[node name="Toit11" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 0, 0.25)
+
+[node name="Toit12" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 0, -1.75)
+
+[node name="Toit13" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 0, -3.75)
+
+[node name="Toit14" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 0, -5.75)
+
+[node name="Toit15" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 0, -7.75)
+
+[node name="Toit16" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 0, 0.249999)
+
+[node name="Toit17" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 0, -1.75)
+
+[node name="Toit18" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 0, -3.75)
+
+[node name="Toit19" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 0, -5.75)
+
+[node name="Toit20" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 0, -7.75)
+
+[node name="Toit21" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8, 0, 0.249999)
+
+[node name="Toit22" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8, 0, -1.75)
+
+[node name="Toit23" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8, 0, -3.75)
+
+[node name="Toit24" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8, 0, -5.75)
+
+[node name="Toit25" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8, 0, -7.75)
+
+[node name="Toit26" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8, 0, 0.249999)
+
+[node name="Toit27" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8, 0, -1.75)
+
+[node name="Toit28" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8, 0, -3.75)
+
+[node name="Toit29" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8, 0, -5.75)
+
+[node name="Toit30" parent="Toit" instance=ExtResource("10_mdrs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8, 0, -7.75)
+
+[connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
