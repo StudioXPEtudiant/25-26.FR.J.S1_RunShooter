@@ -1,9 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://xpxmv06usxul"]
+[gd_scene load_steps=24 format=3 uid="uid://xpxmv06usxul"]
 
 [ext_resource type="PackedScene" uid="uid://cg1fmxryw44pl" path="res://objects/planks.tscn" id="1_j2wfb"]
 [ext_resource type="PackedScene" uid="uid://bq6apx1yb47i0" path="res://objects/Fusil de chase.glb" id="2_11glk"]
 [ext_resource type="PackedScene" uid="uid://bp4b6ec6jhsoi" path="res://objects/Glock 19.glb" id="3_ykl3c"]
 [ext_resource type="Material" uid="uid://74meoyf2jwh4" path="res://Textures/Planks.tres" id="4_ykl3c"]
+[ext_resource type="PackedScene" uid="uid://bnojjuhgtfa8f" path="res://objects/models/Banc.glb" id="5_i768h"]
+[ext_resource type="PackedScene" uid="uid://chqbf1e2s373f" path="res://objects/models/Barriere.glb" id="6_tps6u"]
+[ext_resource type="PackedScene" uid="uid://jkdyko8bvxqy" path="res://objects/models/Cadredeporte.glb" id="7_nbmxc"]
+[ext_resource type="PackedScene" uid="uid://cv4olmp0lpc8t" path="res://objects/models/Cibleblanc.glb" id="8_3j0ts"]
+[ext_resource type="PackedScene" uid="uid://qghc18gdlbyt" path="res://objects/models/Cibleblancbase.glb" id="9_f0uis"]
+[ext_resource type="PackedScene" uid="uid://mlakwxxpihxc" path="res://objects/models/Ciblenoir.glb" id="10_smxh4"]
+[ext_resource type="PackedScene" uid="uid://1lk7tei5eiv5" path="res://objects/models/Ciblenoirbase.glb" id="11_h341f"]
+[ext_resource type="PackedScene" uid="uid://cawar78hsf1n4" path="res://objects/models/Disjoncteur.glb" id="12_247k0"]
+[ext_resource type="PackedScene" uid="uid://d11svlix80syd" path="res://objects/models/Générateur.glb" id="13_mf6mr"]
+[ext_resource type="PackedScene" uid="uid://cqm1m8mnoijcy" path="res://objects/models/Interupteur.glb" id="14_81olu"]
+[ext_resource type="PackedScene" uid="uid://daqtvh1yxy7bt" path="res://objects/models/Lampe.glb" id="15_4u8qu"]
+[ext_resource type="PackedScene" uid="uid://clawxlgrmlifv" path="res://objects/models/Levier.glb" id="16_s3m23"]
+[ext_resource type="PackedScene" uid="uid://cqlh3w78eomkt" path="res://objects/models/Mur.glb" id="17_njaoq"]
+[ext_resource type="PackedScene" uid="uid://dsqhk62l0jtgw" path="res://objects/models/Porte.glb" id="18_51ga2"]
+[ext_resource type="PackedScene" uid="uid://c5g04msja3tsx" path="res://objects/models/Poutre.glb" id="19_6yrqq"]
+[ext_resource type="PackedScene" uid="uid://xio4nlw388d4" path="res://objects/models/Poutrebase.glb" id="20_h027n"]
+[ext_resource type="PackedScene" uid="uid://c8nq0sujc0s4r" path="res://objects/models/Sol.glb" id="21_q7o8d"]
+[ext_resource type="PackedScene" uid="uid://ctibn5cvrqato" path="res://objects/models/Toit.glb" id="22_oy8dl"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vy5vc"]
 
@@ -22,3 +40,57 @@ transform = Transform3D(0.462427, 0, 0, 0, 0.462427, 0, 0, 0, 0.462427, -4.00708
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.82912)
 material_override = ExtResource("4_ykl3c")
 mesh = SubResource("PlaneMesh_vy5vc")
+
+[node name="Banc" parent="." instance=ExtResource("5_i768h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Barriere" parent="." instance=ExtResource("6_tps6u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Cadredeporte" parent="." instance=ExtResource("7_nbmxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Cibleblanc" parent="." instance=ExtResource("8_3j0ts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Cibleblancbase" parent="." instance=ExtResource("9_f0uis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Ciblenoir" parent="." instance=ExtResource("10_smxh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Ciblenoirbase" parent="." instance=ExtResource("11_h341f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Disjoncteur" parent="." instance=ExtResource("12_247k0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Générateur" parent="." instance=ExtResource("13_mf6mr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Interupteur" parent="." instance=ExtResource("14_81olu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Lampe" parent="." instance=ExtResource("15_4u8qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Levier" parent="." instance=ExtResource("16_s3m23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Mur" parent="." instance=ExtResource("17_njaoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Porte" parent="." instance=ExtResource("18_51ga2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Poutre" parent="." instance=ExtResource("19_6yrqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Poutrebase" parent="." instance=ExtResource("20_h027n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Sol" parent="." instance=ExtResource("21_q7o8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="Toit" parent="." instance=ExtResource("22_oy8dl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
